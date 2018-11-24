@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 import pytest
-from application import Application
+from fixture.application import Application
 
-from contact import Contact
+from model.contact import Contact
 
 @pytest.fixture
 def app(request):
     fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
+
 
 def test_contacts(app):
     app.login(username="admin", password="secret")
