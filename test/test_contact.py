@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import pytest
 from fixture.application import Application
-
 from model.contact import Contact
+
 
 @pytest.fixture
 def app(request):
@@ -13,7 +13,7 @@ def app(request):
 
 def test_contacts(app):
     app.session.login(username="admin", password="secret")
-    app.fill_form(Contact(firstname="test_firstname", middlename="test_middlename", lastname="test_lastname",
+    app.contact.fill_form(Contact(firstname="test_firstname", middlename="test_middlename", lastname="test_lastname",
                                    nickname="test_nickname", title="test_title", company="test_company",
                                    home="test_home",
                                    address="test_address", mobile="test_mobile", work="test_work", fax="test_fax",
