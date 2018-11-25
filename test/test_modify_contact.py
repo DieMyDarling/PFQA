@@ -4,7 +4,6 @@ from model.contact import Contact
 
 
 def test_modify_contact(app):
-    app.session.login(username="admin", password="secret")
     app.contact.modify_first(Contact(firstname="test_firstname1", middlename="test_middlename1", lastname="test_lastname1",
                                     nickname="test_nickname1", title="test_title1", company="test_company1",
                                     home="test_home1",
@@ -13,4 +12,3 @@ def test_modify_contact(app):
                                     homepage="test_homepage1",
                                     notes="test_notes1", phone2="test_phone3", address2="test_address3",
                                     bmonth="July", bday="7", byear="2007", amonth="August", aday="8", ayear="2008"))
-    app.session.logout()
