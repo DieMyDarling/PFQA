@@ -34,7 +34,7 @@ class SessionHelper:
 
     def is_logged_in_as(self, usermame):
         wd = self.app.wd
-        return wd.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Address Book'])[1]/preceding::b[1]").text == "("+username+")"
+        return wd.find_element_by_xpath("//div[@id='top']/form/b").text == "("+username+")"
 
 
     def ensure_login(self, username, password):
