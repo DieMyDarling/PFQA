@@ -18,7 +18,7 @@ class ContactHelper:
         self.submit()
         self.return_to_home_page()
 
-    def fill_form(self, contact):
+    def fill_form1(self, contact):
         wd = self.app.wd
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -94,6 +94,51 @@ class ContactHelper:
         wd.find_element_by_name("ayear").send_keys(contact.ayear)
 
 
+    def fill_form(self, contact):
+        wd = self.app.wd
+        self.change_field_value("firstname", contact.firstname)
+        self.change_field_value("middlename", contact.middlename)
+        self.change_field_value("lastname", contact.lastname)
+        self.change_field_value("nickname", contact.nickname)
+        self.change_field_value("title", contact.title)
+        self.change_field_value("company", contact.company)
+        self.change_field_value("address", contact.address)
+        self.change_field_value("home", contact.home)
+        self.change_field_value("mobile", contact.mobile)
+        self.change_field_value("work", contact.work)
+        self.change_field_value("fax", contact.fax)
+        self.change_field_value("email", contact.email)
+        self.change_field_value("email2", contact.email2)
+        self.change_field_value("email3", contact.email3)
+        self.change_field_value("homepage", contact.homepage)
+        self.change_field_value("notes", contact.notes)
+        self.change_field_value("phone2", contact.phone2)
+        self.change_field_value("address2", contact.address2)
+        self.change_field_value("ayear", contact.ayear)
+        self.change_field_value("byear", contact.byear)
+        wd.find_element_by_name("bday").click()
+        Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.bday)
+        wd.find_element_by_name("bday").click()
+        wd.find_element_by_name("bmonth").click()
+        Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact.bmonth)
+        wd.find_element_by_name("bmonth").click()
+        wd.find_element_by_name("aday").click()
+        Select(wd.find_element_by_name("aday")).select_by_visible_text(contact.aday)
+        wd.find_element_by_name("aday").click()
+        wd.find_element_by_name("amonth").click()
+        Select(wd.find_element_by_name("amonth")).select_by_visible_text(contact.amonth)
+        wd.find_element_by_name("amonth").click()
+
+
+    def change_field_value(self, field_name, text):
+        wd = self.app.wd
+        if text is not None:
+            wd.find_element_by_name(field_name).click()
+            wd.find_element_by_name(field_name).clear()
+            wd.find_element_by_name(field_name).send_keys(text)
+
+
+
     def modify_first(self, contact):
         wd = self.app.wd
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
@@ -118,3 +163,7 @@ class ContactHelper:
     def submit(self):
         wd = self.app.wd
         wd.find_element_by_name("submit").click()
+
+    def count(self):
+        wd = self.app.wd
+        return len(wd.find_elements_by_name("selected[]"))
