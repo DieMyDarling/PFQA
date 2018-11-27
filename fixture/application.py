@@ -15,7 +15,8 @@ class Application:
 
     def open_home_page(self):
          wd = self.wd
-         wd.get("http://localhost/addressbook/")
+         if not (wd.current_url.endswith("/addressbook") and len(wd.find_elements_by_name("searchstring")) > 0):
+            wd.get("http://localhost/addressbook/")
 
 
     def is_valid(self):

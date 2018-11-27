@@ -117,19 +117,18 @@ class ContactHelper:
         self.change_field_value("address2", contact.address2)
         self.change_field_value("ayear", contact.ayear)
         self.change_field_value("byear", contact.byear)
+        self.select_field_value("bday", contact.bday)
+        self.select_field_value("bmonth", contact.bmonth)
+        self.select_field_value("aday", contact.aday)
+        self.select_field_value("amonth", contact.amonth)
 
-        wd.find_element_by_name("bday").click()
-        Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.bday)
-        wd.find_element_by_name("bday").click()
-        wd.find_element_by_name("bmonth").click()
-        Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact.bmonth)
-        wd.find_element_by_name("bmonth").click()
-        wd.find_element_by_name("aday").click()
-        Select(wd.find_element_by_name("aday")).select_by_visible_text(contact.aday)
-        wd.find_element_by_name("aday").click()
-        wd.find_element_by_name("amonth").click()
-        Select(wd.find_element_by_name("amonth")).select_by_visible_text(contact.amonth)
-        wd.find_element_by_name("amonth").click()
+
+    def select_field_value(self, field_name, value):
+        wd = self.app.wd
+        if value is not "-":
+            wd.find_element_by_name(field_name).click()
+            Select(wd.find_element_by_name(field_name)).select_by_visible_text(value)
+            wd.find_element_by_name(field_name).click()
 
 
     def change_field_value(self, field_name, text):
@@ -138,7 +137,6 @@ class ContactHelper:
             wd.find_element_by_name(field_name).click()
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
-
 
 
     def modify_first(self, contact):
