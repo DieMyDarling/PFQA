@@ -117,6 +117,7 @@ class ContactHelper:
         self.change_field_value("address2", contact.address2)
         self.change_field_value("ayear", contact.ayear)
         self.change_field_value("byear", contact.byear)
+
         wd.find_element_by_name("bday").click()
         Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.bday)
         wd.find_element_by_name("bday").click()
