@@ -1,5 +1,5 @@
 from selenium.webdriver.support.ui import Select
-
+from model.contact import Contact
 
 class ContactHelper:
 
@@ -104,5 +104,5 @@ class ContactHelper:
             firstname = element.find_element_by_css_selector("td:nth-child(3)").text
             lastname = element.find_element_by_css_selector("td:nth-child(2)").text
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(UserInfo(firstname=firstname, lastname=lastname, id=id))
+            contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
             return contacts
