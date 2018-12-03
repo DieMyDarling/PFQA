@@ -7,7 +7,7 @@ class Contact:
                  mobile=None, work=None, fax=None, email=None,
                  email2=None, email3=None, homepage=None, firstname=None,
                  middlename=None, lastname=None, nickname=None, notes=None,
-                 phone2=None, address2=None, bday="1", bmonth="January", byear=None, aday="2", amonth="February", ayear=None, id=id):
+                 phone2=None, address2=None, bday=None, bmonth=None, byear=None, aday=None, amonth=None, ayear=None, id=None):
         self.title = title
         self.company = company
         self.address = address
@@ -40,7 +40,7 @@ class Contact:
 
 
     def __eq__(self, other):
-        return (self.id is None or other.id is None or self.id == other.id) and (self.firstname == other.fitstname, self.lastname == other.lastname)
+        return (self.id is None or other.id is None or self.id == other.id) and (self.firstname == other.firstname, self.lastname == other.lastname)
 
     def id_or_max(self):
         if self.id:
