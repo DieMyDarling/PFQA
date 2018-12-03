@@ -7,7 +7,7 @@ class Contact:
                  mobile=None, work=None, fax=None, email=None,
                  email2=None, email3=None, homepage=None, firstname=None,
                  middlename=None, lastname=None, nickname=None, notes=None,
-                 phone2=None, address2=None, bday=None, bmonth=None, byear=None, aday=None, amonth=None, ayear=None):
+                 phone2=None, address2=None, bday="1", bmonth="January", byear=None, aday="2", amonth="February", ayear=None, id=id):
         self.title = title
         self.company = company
         self.address = address
@@ -49,4 +49,3 @@ class Contact:
             return int(self.id)
         else:
             return maxsize
-
