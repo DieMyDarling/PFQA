@@ -71,7 +71,7 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         self.fill_form(contact)
-        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+        wd.find_element_by_xpath("(//input[@name='update'])[2]")[index].click()
         self.return_to_home_page()
         self.contact_cache = None
 
@@ -135,3 +135,4 @@ class ContactHelper:
                 id = element.find_element_by_name("selected[]").get_attribute("value")
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
         return list(self.contact_cache)
+
