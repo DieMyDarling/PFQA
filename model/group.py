@@ -11,7 +11,7 @@ class Group:
 
 
     def __repr__(self):
-        return "%s:%s" % (self.id, self.name)
+        return "%s:%s:%s" % (self.id, self.name, self.footer)
 
 
     def __eq__(self, other):

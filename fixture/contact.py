@@ -45,10 +45,10 @@ class ContactHelper:
         self.change_field_value("address2", contact.address2)
         self.change_field_value("ayear", contact.ayear)
         self.change_field_value("byear", contact.byear)
-        self.select_field_value("bday", contact.bday)
-        self.select_field_value("bmonth", contact.bmonth)
-        self.select_field_value("aday", contact.aday)
-        self.select_field_value("amonth", contact.amonth)
+        # self.select_field_value("bday", contact.bday)
+        # self.select_field_value("bmonth", contact.bmonth)
+        # self.select_field_value("aday", contact.aday)
+        # self.select_field_value("amonth", contact.amonth)
 
 
     def select_field_value(self, field_name, value):
@@ -135,12 +135,10 @@ class ContactHelper:
                 lastname = cells[1].text
                 address = cells[3].text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
-                all_phones = cells[5].text
                 all_emails = cells[4].text
-                home, mobile, work, phone2 = all_phones.splitlines()
-                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, home=home, address=address,
-                                                  mobile=mobile, work=work, phone2=phone2,
-                                                  all_phones=all_phones, all_emails=all_emails, id=id))
+                all_phones = cells[5].text
+                self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname, address=address,
+                                                  all_phones=all_phones, all_emails=all_emails))
         return list(self.contact_cache)
 
 

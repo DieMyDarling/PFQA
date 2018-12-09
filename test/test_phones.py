@@ -17,12 +17,12 @@ def test_contact(app):
     assert contact_from_list.address == contact_from_edit_page.address
     assert contact_from_list.firstname == contact_from_edit_page.firstname
     assert contact_from_list.lastname == contact_from_edit_page.lastname
-    assert '\n'.join(map(clear, contact_from_list.all_emails.split('\n'))) == "%s\n%s\n%s" % (
+    assert contact_from_list.all_emails or '\n\n' == "%s\n%s\n%s" % (
         clear(contact_from_edit_page.email), clear(contact_from_edit_page.email2), clear(contact_from_edit_page.email3))
-    assert '\n'.join(map(clear, contact_from_list.all_phones.split('\n'))) == "%s\n%s\n%s\n%s" % (
+    assert contact_from_list.all_phones or '\n\n\n' == "%s\n%s\n%s\n%s" % (
         clear(contact_from_edit_page.home), clear(contact_from_edit_page.mobile),
         clear(contact_from_edit_page.work), clear(contact_from_edit_page.phone2))
 
 
 def clear(s):
-    return re.sub("[-+@ ()]", "", s)
+    return re.sub("[-+()]", "", s)
