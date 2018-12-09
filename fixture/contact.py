@@ -133,10 +133,13 @@ class ContactHelper:
                 cells = element.find_elements_by_tag_name("td")
                 firstname = cells[2].text
                 lastname = cells[1].text
+                address = cells[3].text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
-                all_phones = cells[5].text.splitlines()
-                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, home=all_phones[0],
-                                                  mobile=all_phones[1], work=all_phones[2], phone2=all_phones[3], id=id))
+                all_phones = cells[5].text
+                home, mobile, work, phone2 = all_phones.splitlines()
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, home=home, address=address,
+                                                  mobile=mobile, work=work, phone2=phone2,
+                                                  all_phones=all_phones, id=id))
         return list(self.contact_cache)
 
 
@@ -161,13 +164,14 @@ class ContactHelper:
         self.open_contact_to_edit_by_index(index)
         firstname = wd.find_element_by_name("firstname").get_attribute("value")
         lastname = wd.find_element_by_name("lastname").get_attribute("value")
+        address = wd.find_element_by_name("address").get_attribute("value")
         id = wd.find_element_by_name("id").get_attribute("value")
         home = wd.find_element_by_name("home").get_attribute("value")
         work = wd.find_element_by_name("work").get_attribute("value")
         mobile = wd.find_element_by_name("mobile").get_attribute("value")
         phone2 = wd.find_element_by_name("phone2").get_attribute("value")
-        return Contact(firstname=firstname, lastname=lastname, home=home,
-                       mobile=mobile,work=work, phone2=phone2, id=id)
+        return Contact(firstname=firstname, lastname=lastname, home=home, address=address,
+                       mobile=mobile, work=work, phone2=phone2, id=id)
     #
     #
     # def

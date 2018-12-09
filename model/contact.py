@@ -8,7 +8,7 @@ class Contact:
                  email2=None, email3=None, homepage=None, firstname=None,
                  middlename=None, lastname=None, nickname=None, notes=None,
                  phone2=None, address2=None, bday=None, bmonth=None, byear=None,
-                 aday=None, amonth=None, ayear=None, id=None):
+                 aday=None, amonth=None, ayear=None, all_phones=None, id=None):
         self.title = title
         self.company = company
         self.address = address
@@ -23,6 +23,7 @@ class Contact:
         self.firstname = firstname
         self.middlename = middlename
         self.lastname = lastname
+        self.all_phones = all_phones
         self.nickname = nickname
         self.notes = notes
         self.phone2 = phone2
