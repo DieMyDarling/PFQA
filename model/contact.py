@@ -7,7 +7,8 @@ class Contact:
                  mobile=None, work=None, fax=None, email=None,
                  email2=None, email3=None, homepage=None, firstname=None,
                  middlename=None, lastname=None, nickname=None, notes=None,
-                 phone2=None, address2=None, bday=None, bmonth=None, byear=None, aday=None, amonth=None, ayear=None, id=None):
+                 phone2=None, address2=None, bday=None, bmonth=None, byear=None,
+                 aday=None, amonth=None, ayear=None, id=None):
         self.title = title
         self.company = company
         self.address = address
