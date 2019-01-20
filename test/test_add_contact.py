@@ -11,13 +11,17 @@ def random_string(prefix, max_len=20):
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(max_len))])
 
 test_contact_data = [
-    Contact(firstname=firstname, lastname=lastname, home=home, work=work, phone2=phone2, email=email)
-    for firstname in ["", random_string("firstname", 10)]
-    for lastname in ["", random_string("lastname", 20)]
-    for home in ["", random_string("home", 20)]
-    for work in ["", random_string("work", 20)]
-    for phone2 in ["", random_string("phone2", 20)]
-    for email in ["", random_string("email", 20)]
+    Contact(firstname=random_string("firstname", 15),
+        lastname=random_string("lastname", 15),
+        home=random_string("homephone", 15),
+        mobile=random_string("mobilephone", 15),
+        work=random_string("workphone", 15),
+        fax=random_string("fax", 15),
+        phone2=random_string("phone2", 15),
+        email=random_string("email", 15),
+        email2=random_string("email2", 15),
+        email3=random_string("email3", 15))
+    for i in range(5)
 ]
 
 
