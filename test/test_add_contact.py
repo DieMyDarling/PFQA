@@ -7,8 +7,9 @@ from model.contact import Contact
 
 
 def random_string(prefix, max_len=20):
-    symbols = string.ascii_letters + string.digits + " "*10
+    symbols = string.ascii_letters + string.digits # + " "*10
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(max_len))])
+
 
 test_contact_data = [
     Contact(firstname=random_string("firstname", 15),

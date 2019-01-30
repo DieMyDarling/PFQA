@@ -178,6 +178,3 @@ class ContactHelper:
         email3 = wd.find_element_by_name("email3").get_attribute("value")
         return Contact(firstname=firstname, lastname=lastname, home=home, address=address,
                        mobile=mobile, work=work, phone2=phone2, email=email, email2=email2, email3=email3, id=id)
-    #
-    #
-    # def

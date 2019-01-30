@@ -6,11 +6,20 @@ from fixture.contact import ContactHelper
 
 class Application:
 
-    def __init__(self):
-        self.wd = webdriver.Chrome()
+    def __init__(self, browser, baseurl):
+        if browser == "Firefox":
+            self.wd = webdriver.Firefox()
+        elif browser == "Chrome":
+            self.wd = webdriver.Chrome()
+        elif browser == "Ie":
+            self.wd = webdriver.Ie()
+        else:
+            raise ValueError("Unrecognized browser %s" % browser)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
+        self.baseurl = baseurl
+        self.open_home_page()
 
 
     def open_home_page(self):
@@ -25,6 +34,7 @@ class Application:
             return True
         except:
             return False
+
 
     def destroy(self):
         self.wd.quit()
