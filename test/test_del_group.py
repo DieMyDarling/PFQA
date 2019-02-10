@@ -1,10 +1,10 @@
-from model.group import Group
+from model.group import Contact
 from random import randrange
 
 
 def test_delete_some_group(app):
     if app.group.count() == 0:
-        app.group.create(Group(name="test"))
+        app.group.create(Contact(name="test"))
     old_groups = app.group.get_group_list()
     index = randrange(len(old_groups))
     app.group.delete_group_by_index(index)

@@ -3,7 +3,7 @@ import string
 import pytest
 
 from model.contact import Contact
-from model.group import Group
+from model.group import Contact
 
 
 def random_string(prefix, max_len=20):
@@ -22,7 +22,7 @@ test_contact_data = [
 
 
 test_group_data = [
-    Group(name=name, header=header, footer=footer)
+    Contact(name=name, header=header, footer=footer)
     for name in ["", random_string("name", 10)]
     for header in ["", random_string("header", 20)]
     for footer in ["", random_string("footer", 20)]
