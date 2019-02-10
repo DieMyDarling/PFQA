@@ -15,7 +15,7 @@ except getopt.GetoptError as err:
 
 
 n = 5
-out = "data/contact.json"
+out = "data/contacts.json"
 
 for o, a in opts:
     if o == "-n":

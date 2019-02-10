@@ -1,44 +1,44 @@
 [
   {
-    "py/object": "model.group.Contact",
+    "py/object": "model.group.Group",
     "footer": "",
     "header": "",
     "id": null,
     "name": ""
   },
   {
-    "py/object": "model.group.Contact",
-    "footer": "footerzixLpsk2kKZDj7uEmvI",
+    "py/object": "model.group.Group",
+    "footer": "footeri0ch",
+    "header": "headerljAkK",
+    "id": null,
+    "name": "nameKN"
+  },
+  {
+    "py/object": "model.group.Group",
+    "footer": "footerGLnOqsk",
+    "header": "headeruMgnAuK",
+    "id": null,
+    "name": "namen5G"
+  },
+  {
+    "py/object": "model.group.Group",
+    "footer": "footer",
     "header": "header",
     "id": null,
-    "name": "nameFAhocozk"
+    "name": "nameu"
   },
   {
-    "py/object": "model.group.Contact",
-    "footer": "footer",
-    "header": "headern",
+    "py/object": "model.group.Group",
+    "footer": "footerBwKQAC",
+    "header": "headerwhpB2",
     "id": null,
-    "name": "name"
+    "name": "name0qtkuPug"
   },
   {
-    "py/object": "model.group.Contact",
-    "footer": "footerImsvAJMy6CXOBFaH",
-    "header": "header8IGuPWVtHL",
+    "py/object": "model.group.Group",
+    "footer": "footer3",
+    "header": "headerLYD",
     "id": null,
-    "name": "namejL5Sy"
-  },
-  {
-    "py/object": "model.group.Contact",
-    "footer": "footerzIUt9L5Yxc4ita5Tlrr",
-    "header": "header13",
-    "id": null,
-    "name": "nameeytYL"
-  },
-  {
-    "py/object": "model.group.Contact",
-    "footer": "footerlNAeyGDogSStDHb",
-    "header": "headeric",
-    "id": null,
-    "name": "namerwWm"
+    "name": "namey"
   }
 ]

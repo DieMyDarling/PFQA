@@ -1,4 +1,4 @@
-from model.group import Contact
+from model.group import Group
 import random
 import string
 import os.path
@@ -28,10 +28,10 @@ def random_string(prefix, maxlen):
     return prefix + ''.join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
-testdata = [Contact(name="", header="", footer="")] + [
-    Contact(name=random_string("name", 10),
-            header=random_string("header", 20),
-            footer=random_string("footer", 20))
+testdata = [Group(name="", header="", footer="")] + [
+    Group(name=random_string("name", 10),
+          header=random_string("header", 20),
+          footer=random_string("footer", 20))
     for i in range(n)
 ]
 

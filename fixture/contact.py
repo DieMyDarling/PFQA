@@ -14,7 +14,7 @@ class ContactHelper:
             wd.find_element_by_link_text("add new").click()
 
 
-    def create_user(self, contact):
+    def create(self, contact):
         wd = self.app.wd
         self.open_create_user_page()
         self.fill_form(contact)
