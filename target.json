@@ -2,7 +2,7 @@
   "web": {
   "baseurl": "http://localhost/addressbook/",
   "username": "admin",
-  "password": "secret",
+  "password": "secret"
   },
   "db": {
     "host": "localhost",
